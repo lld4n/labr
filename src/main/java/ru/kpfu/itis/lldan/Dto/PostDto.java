@@ -1,16 +1,16 @@
 package ru.kpfu.itis.lldan.Dto;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 public class PostDto {
     public String title;
     public String post_content;
     public int post_id;
     public int author_id;
-    public LocalDateTime created;
+    public Timestamp created;
     public PostDto() {}
 
-    public PostDto(String title, String post_content, int post_id, int author_id, LocalDateTime created) {
+    public PostDto(String title, String post_content, int post_id, int author_id, Timestamp created) {
         this.title = title;
         this.post_content = post_content;
         this.post_id = post_id;
@@ -50,11 +50,11 @@ public class PostDto {
         this.author_id = author_id;
     }
 
-    public LocalDateTime getCreated() {
+    public Timestamp getCreated() {
         return created;
     }
 
-    public void setCreated(LocalDateTime created) {
+    public void setCreated(Timestamp created) {
         this.created = created;
     }
 }
