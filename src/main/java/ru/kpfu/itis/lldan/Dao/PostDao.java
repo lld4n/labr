@@ -10,7 +10,7 @@ import java.util.List;
 
 public class PostDao {
 
-    public boolean addPost(String title, String post_content, int author_id) {
+    public static boolean addPost(String title, String post_content, int author_id) {
         try {
             Connection con = ConnectionDB.getConnection();
             String sql = "INSERT INTO Posts (title, post_content, created, author_id) VALUES (?, ?, ?, ?)";
@@ -28,7 +28,30 @@ public class PostDao {
         }
     }
 
-    public List<PostDto> getAllPosts() {
+    public static PostDto getPost(int post_id) {
+        Connection con = ConnectionDB.getConnection();
+        String sql = "SELECT * FROM Posts WHERE post_id = (?)";
+        PostDto post = null;
+        try {
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setInt(1, post_id);
+            ResultSet resultSet =statement.executeQuery();
+            if (resultSet.next()) {
+                post = new PostDto();
+                post.setPost_id(resultSet.getInt("post_id"));
+                post.setTitle(resultSet.getString("title"));
+                post.setPost_content(resultSet.getString("post_content"));
+                post.setAuthor_id(resultSet.getInt("author_id"));
+                post.setCreated(resultSet.getTimestamp("created"));
+
+            }
+            return post;
+        } catch (SQLException e) {
+            return null;
+        }
+    }
+
+    public static List<PostDto> getAllPosts() {
         Connection con = ConnectionDB.getConnection();
         String sql = "SELECT * FROM Posts";
         List<PostDto> list = new ArrayList<>();
@@ -47,7 +70,7 @@ public class PostDao {
             }
             return list;
         } catch (SQLException e) {
-            return null;
+            return list;
         }
     }
 }
