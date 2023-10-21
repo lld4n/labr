@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class UserDao {
     public static boolean addUser(String username, String email, String password) {
@@ -29,12 +30,13 @@ public class UserDao {
         }
     }
 
-    public static boolean checkUser(String email, String password) {
 
+    public static UserDto getUser(String email) {
+        Connection con = ConnectionDB.getConnection();
+        String sql = "SELECT * FROM Usr WHERE email = (?)";
+        PreparedStatement statement = null;
         try {
-            Connection con = ConnectionDB.getConnection();
-            String sql = "SELECT * FROM Usr WHERE email = (?)";
-            PreparedStatement statement = con.prepareStatement(sql);
+            statement = con.prepareStatement(sql);
             statement.setString(1, email);
 
             ResultSet resultSet = statement.executeQuery();
@@ -50,8 +52,20 @@ public class UserDao {
 
             resultSet.close();
             statement.close();
+            return user;
+        } catch (SQLException e) {
+            return null;
+        }
 
-            if (user == null ) {
+
+    }
+
+    public static boolean checkUser(String email, String password) {
+
+        try {
+            UserDto user = getUser(email);
+
+            if (user == null) {
                 return false;
             }
 

@@ -20,7 +20,15 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.sendRedirect("registration.html");
+        HttpSession session = req.getSession(true);
+        String email = (String) session.getAttribute("email");
+        if (email == null) {
+            resp.sendRedirect("registration.html");
+
+        } else {
+            resp.sendRedirect("user");
+        }
+
     }
 
     @Override

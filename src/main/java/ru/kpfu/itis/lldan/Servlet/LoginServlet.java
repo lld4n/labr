@@ -1,7 +1,6 @@
 package ru.kpfu.itis.lldan.Servlet;
 
 import ru.kpfu.itis.lldan.Dao.UserDao;
-import ru.kpfu.itis.lldan.Utils.ConnectionDB;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.Connection;
 
 @WebServlet(name = "loginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {

@@ -1,8 +1,8 @@
 package ru.kpfu.itis.lldan.Dto;
 
 public class UserDto {
-    private String username;
-    private String email;
+    public String username;
+    public String email;
 
     private int user_id;
     private String password_hash;
