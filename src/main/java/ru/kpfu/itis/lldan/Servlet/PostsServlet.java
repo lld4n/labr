@@ -21,19 +21,19 @@ public class PostsServlet extends HttpServlet {
         String email = (String) session.getAttribute("email");
         boolean auth = email != null;
         List<PostDto> list = PostDao.getAllPosts();
-//        if (list.isEmpty()) {
-//            resp.sendRedirect("index.html");
-//        } else {
+
         req.setAttribute("auth", auth);
-            req.setAttribute("list", list);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("posts.jsp");
-            dispatcher.forward(req, resp);
-//        }
+        req.setAttribute("list", list);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("posts.jsp");
+        dispatcher.forward(req, resp);
 
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        int post = Integer.parseInt(req.getParameter("post"));
+        HttpSession session = req.getSession(true);
+        session.setAttribute("post", post);
+        resp.sendRedirect("post");
     }
 }

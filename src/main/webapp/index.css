@@ -72,14 +72,17 @@ h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: 400;
 }
+
 body {
     background-color: black;
     color: white;
 }
+
 a {
     color: inherit;
 
 }
+
 .header {
     padding: 20px;
     display: flex;
@@ -96,8 +99,9 @@ a {
     border-radius: 10px;
 
 }
+
 .header__account:hover {
-    background-color: rgba(256, 256, 256,0.1);
+    background-color: rgba(256, 256, 256, 0.1);
 }
 
 .index {
@@ -109,10 +113,12 @@ a {
     flex-direction: column;
     gap: 30px;
 }
+
 .index__title {
     font-size: 45px;
     text-align: center;
 }
+
 .index__add {
     font-size: 25px;
     color: rgba(256, 256, 256, 0.7);
@@ -122,6 +128,7 @@ a {
 .reg__input:focus {
     border: 1px solid white;
 }
+
 .reg__textarea {
     width: 600px;
     height: 600px;
@@ -131,6 +138,7 @@ a {
     font-size: 20px;
     border: 1px solid rgba(256, 256, 256, 0.7);
 }
+
 .reg {
     width: 100%;
     height: 100%;
@@ -147,6 +155,7 @@ a {
     justify-content: center;
     align-items: center;
 }
+
 .reg__input {
     width: 600px;
     background-color: rgba(256, 256, 256, 0.7);
@@ -159,13 +168,16 @@ a {
 .reg__input.danger {
     border: 1px solid red;
 }
+
 .reg__input:focus {
     border: 1px solid white;
 }
+
 .reg__add {
     text-align: center;
     margin-bottom: 10px;
 }
+
 .reg__btn {
     font-size: 20px;
     background-color: white;
@@ -184,11 +196,65 @@ a {
     flex-direction: column;
     gap: 40px;
 }
+
 .user__title {
     font-size: 25px;
 }
+
 .user__text {
     font-size: 20px;
 }
+
+.posts {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+
+}
+
+.posts__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-radius: 10px;
+    background-color: white;
+    align-items: center;
+    color: black;
+    width: 800px;
+}
+
+.posts__title {
+    font-size: 20px;
+}
+
+.posts__date {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+}
+
+.posts__cheat {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+}
+
+.posts__btn {
+    padding: 10px 5px;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+
+}
+
+.posts__btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 
 

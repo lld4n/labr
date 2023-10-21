@@ -24,8 +24,17 @@
     </c:if>
 
 </header>
+<div class="posts">
     <c:forEach items="${list}" var="post">
-        ${post.title}
-    </c:forEach>
+        <div class="posts__item">
+            <div class="posts__title">${post.title}</div>
+            <div class="posts__date">${post.created}</div>
+            <form method="post">
+                <input type="text" value="${post.post_id}" name="post" class="posts__cheat">
+                <input type="submit" value="Посмотреть" class="posts__btn">
+            </form>
+        </div>
+
+    </c:forEach></div>
 </body>
 </html>
