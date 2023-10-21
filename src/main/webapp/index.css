@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+:focus, :active {
+    outline: none;
+}
+
+a:focus, a:active {
+    outline: none;
+}
+
+nav, footer, header, aside {
+    display: block;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    line-height: 1;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+body {
+    background-color: black;
+    color: white;
+}
+a {
+    color: inherit;
+
+}
+.header {
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+
+.header__account {
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.header__account:hover {
+    background-color: rgba(256, 256, 256,0.1);
+}
+
+.index {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.index__title {
+    font-size: 45px;
+    text-align: center;
+}
+.index__add {
+    font-size: 25px;
+    color: rgba(256, 256, 256, 0.7);
+}
+
+
+
+
+.reg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+}
+.reg__input {
+    width: 600px;
+    background-color: rgba(256, 256, 256, 0.7);
+    padding: 20px 10px;
+    border-radius: 10px;
+    font-size: 20px;
+
+}
+
+.reg__input.danger {
+    border: 1px solid red;
+}
+.reg__input:focus {
+    border: 1px solid white;
+}
+.reg__add {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.reg__btn {
+    font-size: 20px;
+    background-color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
