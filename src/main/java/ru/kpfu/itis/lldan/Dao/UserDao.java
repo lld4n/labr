@@ -29,7 +29,32 @@ public class UserDao {
             return false;
         }
     }
+    public static UserDto getUser(int user_id) {
+        Connection con = ConnectionDB.getConnection();
+        String sql = "SELECT * FROM Usr WHERE user_id = (?)";
+        PreparedStatement statement = null;
+        try {
+            statement = con.prepareStatement(sql);
+            statement.setInt(1, user_id);
 
+            ResultSet resultSet = statement.executeQuery();
+            UserDto user = null;
+            if (resultSet.next()) {
+                user = new UserDto();
+                user.setUser_id(resultSet.getInt("user_id"));
+                user.setEmail(resultSet.getString("email"));
+                user.setUsername(resultSet.getString("username"));
+                user.setPassword_hash(resultSet.getString("password_hash"));
+            }
+
+
+            resultSet.close();
+            statement.close();
+            return user;
+        } catch (SQLException e) {
+            return null;
+        }
+    }
 
     public static UserDto getUser(String email) {
         Connection con = ConnectionDB.getConnection();

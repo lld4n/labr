@@ -258,3 +258,77 @@ a {
 
 
 
+.post {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+.post__author {
+    font-size: 24px;
+}
+.post__title {
+    font-size: 32px;
+    text-align: center;
+}
+.post__text {
+    width: 800px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.post__date {
+    font-size: 12px;
+    width: 800px;
+    text-align: end;
+}
+
+.post__form {
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+}
+.post__input:focus {
+    border: 1px solid white;
+}
+.post__label {
+    display: flex;
+    flex: 1;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.post__input {
+    background-color: rgba(256, 256, 256, 0.7);
+    padding: 20px 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid rgba(256, 256, 256, 0.7);
+    flex: 1;
+}
+.post__input.danger {
+    border: 1px solid red;
+}
+.post__len {
+    font-size: 12px;
+}
+.post__btn {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.len__danger {
+    color: red;
+}
