@@ -14,16 +14,17 @@
     <a href="/Labr_war/posts" class="header__account">Все посты</a>
 </header>
 <main class="reg">
-    <form action="addPost" method="post" class="reg__form">
+    <form action="addpost" method="post" class="reg__form" accept-charset="UTF-8">
         <label>
             <input type="text" name="title" id="title" placeholder="Название поста" class="reg__input"/>
         </label>
 
         <label>
-            <textarea name="content" id="content" placeholder="Напиши сюда свой пост"></textarea>
+            <textarea name="content" id="content" placeholder="Напиши сюда свой пост" class="reg__textarea"></textarea>
         </label>
         <input type="submit" value="Опубликовать" class="reg__btn" id="btn">
     </form>
 </main>
+<script src="addpost.js"></script>
 </body>
 </html>

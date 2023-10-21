@@ -20,7 +20,6 @@ public class PostsServlet extends HttpServlet {
         HttpSession session = req.getSession(true);
         String email = (String) session.getAttribute("email");
         boolean auth = email != null;
-        System.out.println(auth);
         List<PostDto> list = PostDao.getAllPosts();
 //        if (list.isEmpty()) {
 //            resp.sendRedirect("index.html");
