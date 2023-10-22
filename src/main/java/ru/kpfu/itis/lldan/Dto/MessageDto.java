@@ -1,5 +1,7 @@
 package ru.kpfu.itis.lldan.Dto;
 
+import ru.kpfu.itis.lldan.Dao.UserDao;
+
 import java.sql.Timestamp;
 
 public class MessageDto {
@@ -15,6 +17,8 @@ public class MessageDto {
     public boolean anonym;
     public Timestamp created;
     public String normal_created;
+
+    public UserDto user;
 
     public void setCreated(Timestamp created) {
         this.created = created;
@@ -54,6 +58,10 @@ public class MessageDto {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+        if (!this.anonym) {
+            this.user = UserDao.getUser(user_id);
+        }
+
     }
 
     public String getMessage_text() {

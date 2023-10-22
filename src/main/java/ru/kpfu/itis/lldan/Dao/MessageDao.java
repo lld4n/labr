@@ -12,14 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MessageDao {
-    public static boolean addMessage(int user_id, boolean anonym, String message_text) {
+    public static boolean addMessage(int user_id, String message_text) {
         try {
             Connection con = ConnectionDB.getConnection();
-            String sql = "INSERT INTO messages (user_id, message_text, anonym) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO messages (user_id, message_text) VALUES (?, ?)";
             PreparedStatement statement = con.prepareStatement(sql);
             statement.setInt(1, user_id);
             statement.setString(2, message_text);
-            statement.setBoolean(3, anonym);
             int rowsInserted = statement.executeUpdate();
             statement.close();
 
