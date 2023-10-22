@@ -18,7 +18,7 @@
         <div class="chat__list">
             <#list list as item>
 
-                <div class="chat__author">${item.user.username}</div>
+<#--                <div class="chat__author">${item.user}</div>-->
 
                 <div class="chat__item">${item.message_text}</div>
             </#list>

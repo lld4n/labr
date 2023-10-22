@@ -21,6 +21,7 @@ public class ChatServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<MessageDto> list = MessageDao.getMessages();
         req.setAttribute("list", list);
+        System.out.println(list);
         RequestDispatcher dispatcher = req.getRequestDispatcher("chat.ftl");
         dispatcher.forward(req, resp);
     }

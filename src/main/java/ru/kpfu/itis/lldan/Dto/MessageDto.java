@@ -3,6 +3,7 @@ package ru.kpfu.itis.lldan.Dto;
 import ru.kpfu.itis.lldan.Dao.UserDao;
 
 import java.sql.Timestamp;
+import java.util.Objects;
 
 public class MessageDto {
 //    message_id SERIAL primary key,
@@ -18,7 +19,20 @@ public class MessageDto {
     public Timestamp created;
     public String normal_created;
 
-    public UserDto user;
+    public String user;
+
+    @Override
+    public String toString() {
+        return "MessageDto{" +
+                "message_id=" + message_id +
+                ", user_id=" + user_id +
+                ", message_text='" + message_text + '\'' +
+                ", anonym=" + anonym +
+                ", created=" + created +
+                ", normal_created='" + normal_created + '\'' +
+                ", user=" + user +
+                '}';
+    }
 
     public void setCreated(Timestamp created) {
         this.created = created;
@@ -26,11 +40,10 @@ public class MessageDto {
     }
 
     private void normalCreated() {
-        StringBuilder buffer = new StringBuilder();
-        buffer.append(this.created.getHours());
-        buffer.append(":");
-        buffer.append(this.created.getMinutes());
-        this.normal_created = buffer.toString();
+        String buffer = this.created.getHours() +
+                ":" +
+                this.created.getMinutes();
+        this.normal_created = buffer;
     }
 
     public MessageDto() {
@@ -58,9 +71,7 @@ public class MessageDto {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
-        if (!this.anonym) {
-            this.user = UserDao.getUser(user_id);
-        }
+        this.user = Objects.requireNonNull(UserDao.getUser(user_id)).username;
 
     }
 
