@@ -438,3 +438,62 @@ a {
     color: black;
     cursor: pointer;
 }
+
+.reactions {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.reactions__wrapper {
+    display: flex;
+    width: 800px;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.reactions__form {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+.reactions__input {
+    background-color: rgba(256, 256, 256, 0.7);
+    padding: 20px 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid rgba(256, 256, 256, 0.7);
+    flex: 1;
+}
+
+.reactions__btn {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.reactions__list {
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.reactions__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.reactions__img {
+    width: 200px;
+    border-radius: 10px;
+}

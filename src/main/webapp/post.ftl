@@ -13,6 +13,7 @@
     <a href="/Labr_war" class="header__account">Лабр</a>
     <a href="/Labr_war/posts" class="header__account">Посмотреть посты</a>
     <a href="/Labr_war/chat" class="header__account">Чат</a>
+    <a href="/Labr_war/reactions" class="header__account">Реакции</a>
 </header>
 <main class="post">
     <div class="post__author">${user.username}</div>
