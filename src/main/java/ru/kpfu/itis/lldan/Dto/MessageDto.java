@@ -21,6 +21,22 @@ public class MessageDto {
 
     public String user;
 
+    public String getNormal_created() {
+        return normal_created;
+    }
+
+    public void setNormal_created(String normal_created) {
+        this.normal_created = normal_created;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "MessageDto{" +
@@ -71,7 +87,12 @@ public class MessageDto {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
-        this.user = Objects.requireNonNull(UserDao.getUser(user_id)).username;
+        UserDto user = UserDao.getUser(user_id);
+        if (user != null) {
+            this.user = user.getUsername();
+        } else {
+            this.user = "Аноним";
+        }
 
     }
 

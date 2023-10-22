@@ -19,7 +19,12 @@ import java.util.List;
 public class ChatServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        HttpSession session = req.getSession(true);
+        String email = (String) session.getAttribute("email");
+
+        boolean auth = email != null;
         List<MessageDto> list = MessageDao.getMessages();
+        req.setAttribute("auth", auth);
         req.setAttribute("list", list);
         System.out.println(list);
         RequestDispatcher dispatcher = req.getRequestDispatcher("chat.ftl");

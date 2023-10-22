@@ -32,7 +32,11 @@
 
     <div class="post__comments">
         <#list comments as item>
-            <div class="post__comment">${item.comment_text}</div>
+            <div class="post__comment-wrap">
+                <div class="post__comment">${item.comment_text}</div>
+                <div class="post__comment-date">${item.normal_created}</div>
+            </div>
+
         </#list>
     </div>
 

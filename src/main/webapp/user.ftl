@@ -12,6 +12,8 @@
 <header class="header">
     <a href="/Labr_war" class="header__account">Лабр</a>
     <a href="/Labr_war/posts" class="header__account">Посмотреть посты</a>
+    <a href="/Labr_war/chat"
+       class="header__account">Чат</a>
 </header>
 <main class="user">
     <h1 class="user__title">Твой профиль</h1>

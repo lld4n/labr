@@ -11,6 +11,13 @@ public class CommentDto {
 
     public Timestamp created_at;
     public String normal_created;
+    public String getNormal_created() {
+        return normal_created;
+    }
+
+    public void setNormal_created(String normal_created) {
+        this.normal_created = normal_created;
+    }
     public void setCreated_at(Timestamp created_at) {
         this.created_at = created_at;
         normalCreated();

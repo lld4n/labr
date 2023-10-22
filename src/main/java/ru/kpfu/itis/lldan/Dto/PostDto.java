@@ -10,6 +10,14 @@ public class PostDto {
     public Timestamp created;
     public String normal_created;
 
+    public String getNormal_created() {
+        return normal_created;
+    }
+
+    public void setNormal_created(String normal_created) {
+        this.normal_created = normal_created;
+    }
+
     public void setCreated(Timestamp created) {
         this.created = created;
         normalCreated();
@@ -18,13 +26,20 @@ public class PostDto {
     private void normalCreated() {
 
         StringBuilder buffer = new StringBuilder();
+        buffer.append(this.created.getDay());
+        buffer.append(".");
+        buffer.append(this.created.getMonth());
+        buffer.append(" ");
         buffer.append(this.created.getHours());
         buffer.append(":");
+
         buffer.append(this.created.getMinutes());
         System.out.println(buffer);
         this.normal_created = buffer.toString();
     }
-    public PostDto() {}
+
+    public PostDto() {
+    }
 
     public PostDto(String title, String post_content, int post_id, int author_id, Timestamp created) {
         this.title = title;
