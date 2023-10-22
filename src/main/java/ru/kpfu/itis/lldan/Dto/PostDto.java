@@ -8,6 +8,22 @@ public class PostDto {
     public int post_id;
     public int author_id;
     public Timestamp created;
+    public String normal_created;
+
+    public void setCreated(Timestamp created) {
+        this.created = created;
+        normalCreated();
+    }
+
+    private void normalCreated() {
+
+        StringBuilder buffer = new StringBuilder();
+        buffer.append(this.created.getHours());
+        buffer.append(":");
+        buffer.append(this.created.getMinutes());
+        System.out.println(buffer);
+        this.normal_created = buffer.toString();
+    }
     public PostDto() {}
 
     public PostDto(String title, String post_content, int post_id, int author_id, Timestamp created) {
@@ -54,7 +70,5 @@ public class PostDto {
         return created;
     }
 
-    public void setCreated(Timestamp created) {
-        this.created = created;
-    }
+
 }

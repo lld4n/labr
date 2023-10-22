@@ -332,3 +332,19 @@ a {
 .len__danger {
     color: red;
 }
+
+
+
+.post__comments {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.post__comment {
+    padding: 10px;
+    border-radius: 10px;
+    text-align: start;
+    width: 800px;
+    background-color: white;
+    color: black;
+}

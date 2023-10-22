@@ -22,7 +22,7 @@
     <c:if test="${auth}">
         <a href="/Labr_war/addpost" class="header__account">Добавить пост</a>
     </c:if>
-
+    <a href="/Labr_war/chat" class="header__account">Чат</a>
 </header>
 <div class="posts">
     <c:forEach items="${list}" var="post">
